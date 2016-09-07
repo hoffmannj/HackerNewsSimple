@@ -1,5 +1,5 @@
 # HackerNewsSimple
-Hacker News Scraper - Simple version
+Hacker News Scraper - Simple version  
 As simple and compact as possible. (just around 100 lines of code)
 
 ### Usage
