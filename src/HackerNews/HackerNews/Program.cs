@@ -52,10 +52,7 @@ namespace HackerNews
             {
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<List<int>>(response);
             }
-            catch
-            {
-                return null;
-            }
+            catch { return null; }
         }
 
         private static OutputItem GetItem(int id, int rank)
@@ -75,10 +72,7 @@ namespace HackerNews
                     Uri = hnItem.Url
                 };
             }
-            catch
-            {
-                return null;
-            }
+            catch { return null; }
         }
 
         private static bool IsValid(OutputItem item)
@@ -93,14 +87,11 @@ namespace HackerNews
         private static string GetResponse(string url)
         {
             using (var client = new HttpClient())
-            try
-            {
-                return client.GetStringAsync(url).Result;
-            }
-            catch
-            {
-                return string.Empty;
-            }
-    }
+                try
+                {
+                    return client.GetStringAsync(url).Result;
+                }
+                catch { return string.Empty; }
+        }
     }
 }
