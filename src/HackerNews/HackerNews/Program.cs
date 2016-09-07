@@ -40,8 +40,8 @@ namespace HackerNews
         private static int GetArgumentNumber(string[] args)
         {
             int number;
-            if (args.Length != 2 || args[0] != "--posts" || !int.TryParse(args[1], out number)) return -1;
-            return int.Parse(args[1]);
+            if (args.Length != 2 || args[0] != "--posts" || !int.TryParse(args[1], out number) || number < 1 || number > 100) return -1;
+            return number;
         }
 
         private static List<int> GetStoryIDs()
